@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+  background-image: url('./img15.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+
+
+
+.App-header {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+  font-style: oblique;
+  border: 10px solid bisque;
+  padding-top: 4%;
+}
+.App-header h2{
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.041), 0 0 20px rgb(155, 86, 8), 0 0 5px rgb(139, 90, 0);
+font-family: URW Chancery L, cursive;
+font-weight: bold;
+}
+
+.book-library{
+  border: 10px solid bisque;
+  padding-top: 4%;
+}
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.button {
+  background-color: #c96a1cc4;
+  border: none;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-bottom: 10%;
+  border-radius: 10px;
+  }
+
+  .btnSearch{
+    background-color: #c96a1cc4;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+
+  }
+
+  footer{
+    min-height: 14vh;
+    padding: 3%;
+    background-color: #c96a1cc4;
+
+  }
