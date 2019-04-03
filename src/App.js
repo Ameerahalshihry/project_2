@@ -66,6 +66,7 @@ let display;
 
 if (this.state.active){
   display =  <BookCard current={this.state.current}/>
+
   
 } else {
   display = bookCovers
@@ -80,6 +81,7 @@ if (this.state.active){
         </header>
         <div>
 <ListBooks />
+
 </div>
         <div className="book-library">
           {/* <ListBooks book={this.state.book1} faves={this.state.faves} /> */}

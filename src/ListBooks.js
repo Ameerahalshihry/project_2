@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Search from './Search'
-var convert = require('xml-js')
+//var convert = require('xml-js')
 
 
 ////key: Jui4sG4vPxdG0tWeaG9Bsw
@@ -13,22 +13,27 @@ export default class ListBooks extends Component {
     searchInput: '',
     searchedBook: []
   }
-  handleSearch=(e) => {
-    e.preventDefault()
+  handleChange=(e) => {
+   // e.preventDefault()
     this.setState({searchInput:e.target.value})
   }
-searchBook =(e)=>
+  handleSubmit =(e)=>
 {
   e.preventDefault()
   
-    fetch(`http://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}`).then(response => {
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}`).then(response => {
       response.json().then(data => {
         console.log(data);
         
-        // let copyStateSearch = { ...this.state }
-        // for(let i=0 ; i<data.response.items.length;i++){
-        //   copyStateSearch.searchedBook.push({ISBN:data.docs[1].isbn , title:data.docs[1].title })
-
+      let copyStateSearch = { ...this.state }
+      for(let i=0 ; i<data.items.length;i++){
+      copyStateSearch.searchedBook.push({
+        title:data.items[i].volumeInfo.title, 
+        author:data.items[i].volumeInfo.authors,
+       info:data.items[i].volumeInfo.infoLink,
+        url:data.items[i].volumeInfo.imageLinks.thumbnail
+        })
+      }
         // }
         //console.log(data);
         this.setState({searchedBook:this.state.searchedBook})
@@ -40,13 +45,19 @@ searchBook =(e)=>
     })
   } 
 render() {
+  //console.log(this.state.searchedBook);
+  
   let bookSearching = this.state.searchedBook.map((book,index) => {
-     return <Search handleSearch={this.handleSearch} searchBook={this.searchBook}/>
+     return <Search book={book} key={index} title={book.title} author={book.author} info={book.info} url={book.url}/>
   })
   return (
     <div>
-      <Search handleSearch={this.handleSearch} searchBook={this.searchBook}/>
-
+      {/* <Search handleSearch={this.handleSearch} searchBook={this.searchBook}/> */}
+<form onSubmit={this.handleSubmit} style={{"display": "inline-block"}} className="col-4">
+          <input type="text" placeholder="search book by title" onChange={this.handleChange}/>
+          <button className="btnSearch" type="submit">Search</button> 
+      </form> 
+    
       {bookSearching}
 {/* <Img bookCover={this.state.book1}/> */}
     </div>
