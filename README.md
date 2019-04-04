@@ -4,7 +4,7 @@
 # The Books Library
 
 ## Overview:
-This app will allow the user search for books.
+This app will allow the user to search books and show the details for the books.
 
 ## The Technologies used
 - React
@@ -36,9 +36,10 @@ Ameerah Alshihry
 
 
 ## Resources
-- **[Google Book] (https://developers.google.com/books/)
-- **[Open Library] (https://openlibrary.org/developers/api)
-- **[React] (https://reactjs.org/)
+- **[Google Book](https://developers.google.com/books/)**
+- **[Open Library](https://openlibrary.org/developers/api)**
+- **[React](https://reactjs.org/)**
+- **[Bootstrap](https://getbootstrap.com/)**
 - **[MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** 
 - **[GitHub Pages](https://pages.github.com)**
 
