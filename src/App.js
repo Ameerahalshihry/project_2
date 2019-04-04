@@ -24,20 +24,14 @@ class App extends Component {
       fetch(url).then(response => {
         response.json().then(data => {
           let books = { ...this.state }
-         // console.log(data[`ISBN:${bookISBN}`].title);
-         //console.log(data[`ISBN:${bookISBN}`].authors["0"].name);
-         //console.log(data[`ISBN:${bookISBN}`].authors["0"].url);
-         //console.log(data[`ISBN:${bookISBN}`].ebooks["0"].preview_url);
-         //console.log(data[`ISBN:${bookISBN}`].ebooks["0"].borrow_url);
-        //console.log(data[`ISBN:${bookISBN}`].publish_date);
+      
       books.allBooks.push({ISBN: bookISBN, data: data[`ISBN:${bookISBN}`]})
 
-          // books.booksCover.push(data[`ISBN:${bookISBN}`].cover.medium)
           return this.setState((prevState) => ({ allBooks: books.allBooks }))
         })
       })
     })
-  }//.cover.medium
+  }
 
   handleDetailsClick = (book) => {
 
@@ -46,12 +40,9 @@ class App extends Component {
       response.json().then(data => {
         this.setState({current: data[`ISBN:${book}`]})
         this.setState({active: true})
-        //console.log("im data",data);
         
-        //console.log("im isbn",data[`ISBN:${book}`]) // take a look at what you get back!
       })
     })
-    //console.log("Fetching details for" + book);
   }
 
 
@@ -117,6 +108,5 @@ if (this.state.active){
 }
 
 export default App;
-//key: Jui4sG4vPxdG0tWeaG9Bsw
-//secret: 0B8zeMDyF4KMhdS3R6QMSEe0LsuxoVbd6UhisfFUU
+
 

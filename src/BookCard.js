@@ -22,9 +22,3 @@ export default class BookCard extends Component {
     )
   }
 }
-  // console.log(data[`ISBN:${bookISBN}`].title);
-         //console.log(data[`ISBN:${bookISBN}`].authors["0"].name);
-         //console.log(data[`ISBN:${bookISBN}`].authors["0"].url);
-         //console.log(data[`ISBN:${bookISBN}`].ebooks["0"].preview_url);
-         //console.log(data[`ISBN:${bookISBN}`].ebooks["0"].borrow_url);
-        //console.log(data[`ISBN:${bookISBN}`].publish_date);
