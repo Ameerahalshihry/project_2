@@ -8,7 +8,7 @@ export default class Search extends Component {
       <div>
         <img src={this.props.url} alt="" />
 <h2>{this.props.title}</h2>
-<p>{this.props.author}</p>
+<p>Author : <strong>{this.props.author}</strong></p>
 <a href={this.props.info}className="button">Read more</a>
 
 
