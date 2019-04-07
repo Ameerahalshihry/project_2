@@ -14,7 +14,6 @@ export default class BookCard extends Component {
         <h6>{this.props.current.publish_date}</h6>
         <br/>
         <a href={this.props.current.ebooks["0"].preview_url} className="button">Preview</a>
-        {/* <button onClick={this.props.current.ebooks["0"].preview_url}>Preview</button> */}
         
         <a href={this.props.current.ebooks["0"].borrow_url} className="button">Borrow</a>
 

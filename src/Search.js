@@ -10,12 +10,6 @@ export default class Search extends Component {
 <h2>{this.props.title}</h2>
 <p>Author : <strong>{this.props.author}</strong></p>
 <a href={this.props.info}className="button">Read more</a>
-
-
-     {/* <form onSubmit={this.props.searchBook} style={{"display": "inline-block"}} className="col-4">
-          <input type="text" placeholder="search book by title" onChange={this.props.handleSearch}/>
-          <button className="btnSearch"type="submit">Search</button> 
-      </form>  */}
       </div>
     )
   }

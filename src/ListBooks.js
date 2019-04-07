@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import Search from './Search'
-//var convert = require('xml-js')
 
 
 ////key: Jui4sG4vPxdG0tWeaG9Bsw
 //secret: 0B8zeMDyF4KMhdS3R6QMSEe0LsuxoVbd6UhisfFUU
-
 //APIgoogleBook AIzaSyD0pHEXFGy_F07De62dzb2w89Zz0Ime4zs
 export default class ListBooks extends Component {
 
@@ -34,32 +32,25 @@ export default class ListBooks extends Component {
         url:data.items[i].volumeInfo.imageLinks.thumbnail
         })
       }
-        // }
-        //console.log(data);
         this.setState({searchedBook:this.state.searchedBook})
-       //console.log(this.state.searchedBook);
-        //console.log(data.docs[1].title);
-       //console.log(data.docs[""0""].author_name);
+  
 
       })
     })
   } 
 render() {
-  //console.log(this.state.searchedBook);
   
   let bookSearching = this.state.searchedBook.map((book,index) => {
      return <Search book={book} key={index} title={book.title} author={book.author} info={book.info} url={book.url}/>
   })
   return (
     <div>
-      {/* <Search handleSearch={this.handleSearch} searchBook={this.searchBook}/> */}
 <form onSubmit={this.handleSubmit} style={{"display": "inline-block"}} className="col-4">
           <input type="text" placeholder="search book by title" onChange={this.handleChange}/>
           <button className="btnSearch" type="submit">Search</button> 
       </form> 
     
       {bookSearching}
-{/* <Img bookCover={this.state.book1}/> */}
     </div>
   )
 }
